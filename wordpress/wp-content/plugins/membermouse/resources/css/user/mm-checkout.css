@@ -1,0 +1,155 @@
+@CHARSET "UTF-8";
+.mm-checkoutContainer
+{
+	font-size:14px;
+	color:#333;
+	margin:0 auto;
+}
+.mm-checkoutContainer h3
+{
+	font-size:14px;
+}
+.mm-checkoutContainer p.mm-formError, .mm-formError
+{
+	font-size: 21px;
+	background:#CC3C3F;
+	padding:5px 10px;
+	border-radius:5px;
+	color: #fff;
+	text-shadow:1px 1px 0px rgba(0,0,0,0.25);		
+}
+.mm-checkoutSection
+{
+	width:220px;
+	padding:20px;
+	float:right;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.77);
+}
+.mm-checkoutSection p.mm-productDesc
+{
+	font:italic 14px/1.4 Georgia, "Times New Roman", Times, serif;
+}
+.mm-checkoutSection ul
+{
+	margin:10px 0 10px;
+	padding:0;
+	float:left;
+}
+.mm-checkoutSection ul li
+{
+	margin:0 10px 10px 0;
+	list-style:none;
+	clear:left;
+}
+.mm-checkoutSection ul li .mm-title
+{
+	width:120px;
+	float:left;
+	display:block;
+	padding:0;
+	font-weight:bold;
+}
+.mm-checkoutSection ul li mm-data
+{
+	float:left;
+	display:block;
+	margin:0 0 10px;
+	padding:0;
+}
+.mm-checkoutSection .mm-purchaseSection
+{
+	clear:both;
+	background:#fff;
+	overflow:auto;
+	border-radius:5px;
+	padding: 10px 0px 10px 0px;
+}
+.mm-paypalCheckoutBtn
+{
+	padding-top:15px;
+	height:47px;
+	width:195px;
+	display: block;
+	background:url(../../images/paypal-checkout.gif) no-repeat top center;
+}
+.mm-clickbankCheckoutBtn
+{
+	padding-top:15px;
+	height:47px;
+	width:195px;
+	display: block;
+	background:url(../../images/clickbank-checkout.gif) no-repeat top center;
+}
+.mm-checkoutInfo
+{
+	margin-right:260px;
+}
+.mm-checkoutInfoBlock
+{
+	 padding:20px;
+	 border:2px solid #e5e5e5;
+	 margin-bottom:20px;
+	 border-radius:5px;
+	 overflow:auto;
+}
+.mm-checkoutInfo .mm-formField
+{
+	padding-bottom:5px;
+	margin-bottom:5px;
+	clear:left;
+	overflow:auto;
+	color:#666;
+}
+.mm-checkoutInfo .mm-formField label
+{
+	width:120px;
+	float:left;
+}
+.mm-checkoutInfo .mm-formField .mm-selectList
+{
+	
+}
+.mm-checkoutInfo .mm-formField .mm-expMonthList,
+.mm-checkoutInfo .mm-formField .mm-expYearList,
+.mm-checkoutInfo .mm-checkout-expiration-date select
+{
+	padding-right:5px;
+}
+.mm-checkoutInfo .mm-couponSection
+{
+	clear:both;
+}
+.mm-checkoutInfo .mm-couponSection .mm-formField
+{
+	width:auto;
+	float:none;
+}
+.mm-checkoutInfo .mm-couponSection .mm-applyCouponBtn a
+{
+	padding: 6px 15px;
+	background:#BBDEEA;
+	color:#333;
+	border-radius:50px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.33);
+}
+.mm-checkoutInfo .mm-couponSection .mm-applyCouponBtn a:hover
+{
+	background:#8ec9dc;
+}
+.mm-checkoutInfo .mm-checkoutInfoBlock .mm-couponSuccessMessage
+{
+	background:#393;
+	padding:5px 10px;
+	border-radius:5px;
+	color: #fff;
+	text-shadow:1px 1px 0px rgba(0,0,0,0.25);
+}
+.mm-checkoutInfo .mm-checkoutInfoBlock .mm-couponErrorMessage
+{
+	background:#CC3C3F;
+	padding:5px 10px;
+	border-radius:5px;
+	color: #fff;
+	text-shadow:1px 1px 0px rgba(0,0,0,0.25);
+}

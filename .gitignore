@@ -1,0 +1,11 @@
+wp/*
+!wordpress/
+wordpress/*
+
+!wordpress/wp-content/
+wordpress/wp-content/*
+!wordpress/wp-content/plugins/
+
+!wordpress/wp-content/themes/
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/Trading-Advantage/
