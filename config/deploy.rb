@@ -17,7 +17,7 @@ set :user, "root"
 set :password, "ehD9ZC4HAsU2"
 
 # if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+after "deploy:restart", "deploy:copy_folders"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -38,9 +38,9 @@ namespace :deploy do
   desc 'sync folders with wordpress main project'
   task :copy_folders  do
     dest_path = '/var/www/vhosts/www.tradingadvantage.com/http_docs/wp-content'
-    #run "#{try_sudo} cp -rf #{release_path}/wordpress/wp-content/* #{dest_path}/"
+    #run "#{try_sudo} cp -rf #{current_path}/wordpress/wp-content/* #{dest_path}/"
     %w(plugins themes).each do |folder_name|
-      run "#{try_sudo} cp -rf #{current_path}/wordpress/wp-content/#{folder_name} #{dest_path}/#{folder_name}"
+      run "#{try_sudo} cp -rf #{current_path}/wordpress/wp-content/#{folder_name} #{dest_path}/"
       run "#{try_sudo} chown -R www-data:www-data #{dest_path}/#{folder_name}"
     end
   end
