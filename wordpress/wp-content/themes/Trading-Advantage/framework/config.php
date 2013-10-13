@@ -414,7 +414,7 @@ $config = array (
 		//Taxonomies
 		'taxonomies' => array (			
 			array(	
-				'taxonomy' => 'course_category',	
+				'taxonomy' => 'category',
 				'object_type' => array('course'),					
 				'settings' => array(
 					'hierarchical' => true,
@@ -749,7 +749,7 @@ $config = array (
 					'category' => array(
 						'type' => 'select_category',
 						'label' => __('Courses Category', 'academy'),
-						'taxonomy' => 'course_category',
+						'taxonomy' => array('course_category','category'),
 					),
 					'number' => array(
 						'std' => '4',
