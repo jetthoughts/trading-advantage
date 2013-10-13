@@ -92,9 +92,7 @@ html,
 body {
 	height:100%;
 }
-.post-footer a{
-    background-color: blue !important;
-}
+
 fieldset,
 a img {
     border:none;
