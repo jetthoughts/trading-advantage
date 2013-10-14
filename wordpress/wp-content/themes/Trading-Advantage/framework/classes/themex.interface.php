@@ -7,9 +7,6 @@ class ThemexInterface {
 	//Init module
 	public static function init() {
 	
-		//add theme options page to menu
-		add_action('admin_menu', array(__CLASS__,'addAdminPage'));
-		
 		//render admin head
 		add_action( 'admin_head', array(__CLASS__,'renderAdminHead'));
 		
@@ -76,23 +73,7 @@ class ThemexInterface {
 		return $form_fields;
 	}
 	
-	
-	//Add theme admin page
-	public static function addAdminPage() {
-		
-		//add page to menu
-		add_submenu_page( 'themes.php', __('Theme Options','academy'), __('Theme Options','academy'), 'administrator', 'theme-options', array(__CLASS__,'renderPage') );
-		
-	}
 
-	//Render theme options page
-	public static function renderPage() {
-	
-		//include page layout
-		include(THEMEX_PATH.'admin/layout.php');
-		
-	}
-	
 	//Render menu from page headings
 	public static function renderMenu() {
 		
