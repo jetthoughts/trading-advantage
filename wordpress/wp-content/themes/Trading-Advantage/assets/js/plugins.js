@@ -2,7 +2,8 @@
  * Core script to handle plugins
  */
 
-var Plugins = function() {
+
+var Plugins = function($) {
 
 	"use strict";
 
@@ -521,4 +522,4 @@ var Plugins = function() {
 
 	};
 
-}();
+}(jQuery);

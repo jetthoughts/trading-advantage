@@ -6,7 +6,7 @@
 
 "use strict";
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 	//===== Calendar =====//
 	var date = new Date();

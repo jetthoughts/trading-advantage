@@ -6,7 +6,7 @@
 
 "use strict";
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 	//===== Validation =====//
 	// @see: for default options, see assets/js/plugins.form-components.js (initValidation())

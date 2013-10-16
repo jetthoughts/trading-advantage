@@ -6,7 +6,7 @@
 
 "use strict";
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 	// easy-pie-charts
 	$('.circular-charts-reload').click(function(){

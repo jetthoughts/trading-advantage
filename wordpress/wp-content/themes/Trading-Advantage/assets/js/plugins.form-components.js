@@ -2,7 +2,8 @@
  * Core script to handle all form specific plugins
  */
 
-var FormComponents = function() {
+
+var FormComponents = function($) {
 
 	"use strict";
 
@@ -255,4 +256,4 @@ var FormComponents = function() {
 
 	};
 
-}();
+}(jQuery);

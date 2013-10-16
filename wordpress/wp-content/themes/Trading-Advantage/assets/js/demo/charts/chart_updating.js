@@ -6,7 +6,8 @@
 
 "use strict";
 
-$(document).ready(function(){
+
+jQuery(document).ready(function($){
 
 	// We use an inline data source in the example, usually data would be fetched from a server
 	var data = [], totalPoints = 200;

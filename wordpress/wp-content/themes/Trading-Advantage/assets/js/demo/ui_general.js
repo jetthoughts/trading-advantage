@@ -6,7 +6,7 @@
 
 "use strict";
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 	//===== Date Pickers & Time Pickers & Color Pickers =====//
 	$( ".datepicker" ).datepicker({

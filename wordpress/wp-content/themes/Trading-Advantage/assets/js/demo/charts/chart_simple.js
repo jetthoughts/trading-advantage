@@ -6,7 +6,8 @@
 
 "use strict";
 
-$(document).ready(function(){
+
+jQuery(document).ready(function($){
 
 	// Sample Data
 	var sin = [], cos = [];

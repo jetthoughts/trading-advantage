@@ -6,7 +6,7 @@
 
 "use strict";
 
-$(document).ready(function(){
+(function($) {
 
 	//===== Sidebar Search (Demo Only) =====//
 	$('.sidebar-search').submit(function (e) {
@@ -69,4 +69,4 @@ $(document).ready(function(){
 	setTimeout(function() {
 		$('#sidebar .notifications.demo-slide-in > li:eq(0)').slideDown(500);
 	}, 7000);
-});
+})(jQuery);
