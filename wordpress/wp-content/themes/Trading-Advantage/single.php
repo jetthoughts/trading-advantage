@@ -1,20 +1,12 @@
 <?php 
 get_header(); 
 
-$layout=ThemexCore::getOption('blog_layout','right');
-$date_format=get_option('date_format');
-
-if($layout=='left') {
-?>
-<aside class="sidebar column fourcol">
+$date_format=get_option('date_format'); ?>
+<?php get_header(); ?>
 <?php get_sidebar(); ?>
-</aside>
-<div class="column eightcol last">
-<?php } else if($layout=='right') { ?>
-<div class="column eightcol">
-<?php } else { ?>
-<div class="fullwidth-block">
-<?php } ?>
+<div id="content">
+    <div class="container">
+
 	<?php the_post(); ?>
 	<article class="single-post">
 		<?php if(has_post_thumbnail() && ThemexCore::getOption('blog_image')!='true') { ?>
@@ -45,10 +37,5 @@ if($layout=='left') {
 		</div>		
 	</article>
 	<?php comments_template(); ?>
-</div>
-<?php if($layout=='right') { ?>
-<aside class="sidebar column fourcol last">
-<?php get_sidebar(); ?>
-</aside>
-<?php } ?>
+
 <?php get_footer(); ?>

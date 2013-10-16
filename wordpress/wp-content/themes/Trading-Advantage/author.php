@@ -1,5 +1,9 @@
 <?php get_header(); ?>
-<div class="user-profile sevencol column">
+<?php get_sidebar(); ?>
+<div id="content">
+    <div class="container">
+<div class="row">
+    <div class="col-md-7">
 	<?php if(ThemexUser::isProfilePage()) { ?>
 	<form action="<?php echo ThemexUser::$data['profile_page_url']; ?>" class="formatted-form user-profile-form" enctype="multipart/form-data" method="POST">
 		<div class="user-image">
@@ -18,61 +22,61 @@
 				<div class="sixcol column">
 					<div class="field-wrapper">
 						<input type="text" name="user_first_name" value="<?php echo ThemexUser::$data['user']->first_name; ?>" placeholder="<?php _e('First Name','academy'); ?>" />
-					</div>								
+					</div>
 				</div>
 				<div class="sixcol column last">
 					<div class="field-wrapper">
 						<input type="text" name="user_last_name" value="<?php echo ThemexUser::$data['user']->last_name; ?>" placeholder="<?php _e('Last Name','academy'); ?>" />
 					</div>
-				</div>				
+				</div>
 				<div class="clear"></div>
 				<div class="field-wrapper">
 					<input type="text" name="user_signature" value="<?php echo ThemexUser::$data['user']->signature; ?>" placeholder="<?php _e('Signature','academy'); ?>" />
-				</div>				
+				</div>
 				<?php ThemexInterface::renderEditor('user_description', wpautop(ThemexUser::$data['user']->description)); ?>
 				<div class="sixcol column">
 					<div class="field-wrapper">
 						<input type="text" name="user_facebook" value="<?php echo ThemexUser::$data['user']->facebook; ?>" placeholder="<?php _e('Facebook','academy'); ?>" />
-					</div>								
+					</div>
 				</div>
 				<div class="sixcol column last">
 					<div class="field-wrapper">
 						<input type="text" name="user_twitter" value="<?php echo ThemexUser::$data['user']->twitter; ?>" placeholder="<?php _e('Twitter','academy'); ?>" />
 					</div>
-				</div>				
+				</div>
 				<div class="clear"></div>
 				<div class="sixcol column">
 					<div class="field-wrapper">
 						<input type="text" name="user_google" value="<?php echo ThemexUser::$data['user']->google; ?>" placeholder="<?php _e('Google','academy'); ?>+" />
-					</div>								
+					</div>
 				</div>
 				<div class="sixcol column last">
 					<div class="field-wrapper">
 						<input type="text" name="user_tumblr" value="<?php echo ThemexUser::$data['user']->tumblr; ?>" placeholder="<?php _e('Tumblr','academy'); ?>" />
 					</div>
-				</div>				
+				</div>
 				<div class="clear"></div>
 				<div class="sixcol column">
 					<div class="field-wrapper">
 						<input type="text" name="user_linkedin" value="<?php echo ThemexUser::$data['user']->linkedin; ?>" placeholder="<?php _e('LinkedIn','academy'); ?>" />
-					</div>								
+					</div>
 				</div>
 				<div class="sixcol column last">
 					<div class="field-wrapper">
 						<input type="text" name="user_flickr" value="<?php echo ThemexUser::$data['user']->flickr; ?>" placeholder="<?php _e('Flickr','academy'); ?>" />
 					</div>
-				</div>				
+				</div>
 				<div class="clear"></div>
 				<div class="sixcol column">
 					<div class="field-wrapper">
 						<input type="text" name="user_youtube" value="<?php echo ThemexUser::$data['user']->youtube; ?>" placeholder="<?php _e('YouTube','academy'); ?>" />
-					</div>								
+					</div>
 				</div>
 				<div class="sixcol column last">
 					<div class="field-wrapper">
 						<input type="text" name="user_vimeo" value="<?php echo ThemexUser::$data['user']->vimeo; ?>" placeholder="<?php _e('Vimeo','academy'); ?>" />
 					</div>
-				</div>				
+				</div>
 				<div class="clear"></div>
 				<a href="#" class="button submit-button"><span><span class="button-icon save"></span><?php _e('Save Changes','academy'); ?></span></a>
 		</div>
@@ -91,7 +95,7 @@
 	</div>
 	<?php } ?>
 </div>
-<div class="fivecol column last">
+<div class="col-md-5">
 	<?php if(ThemexUser::isProfilePage() && ($subscription=ThemexCourse::getSubscriptionTime())) { ?>
 	<h2 class="secondary"><?php echo $subscription; ?>.</h2>
 	<?php } ?>
@@ -106,11 +110,11 @@
 				<div class="course-status"><?php _e('Author', 'academy'); ?></div>
 				<?php } ?>
 				<h4 class="nomargin"><a href="<?php echo get_permalink($course->ID); ?>"><?php echo get_the_title($course->ID); ?></a></h4>
-				<?php get_template_part('module', 'progress'); ?>				
+				<?php get_template_part('module', 'progress'); ?>
 			</div>
 			<?php if(ThemexCourse::$data['rating']!='true') { ?>
-			<div class="course-meta">			
-			<?php get_template_part('module','rating'); ?>			
+			<div class="course-meta">
+			<?php get_template_part('module','rating'); ?>
 			</div>
 			<?php } ?>
 		</div>
@@ -120,5 +124,5 @@
 	<h2 class="secondary"><?php _e('No courses yet.', 'academy'); ?></h2>
 	<?php } ?>
 	<?php } ?>
-</div>
+</div></div>
 <?php get_footer(); ?>

@@ -1,3 +1,6 @@
+
+<div id="sidebar" class="sidebar-fixed">
+    <div id="sidebar-content">
 <div class="lesson-options">
 	<form action="<?php the_permalink(); ?>" method="POST">
 		<?php if(ThemexCourse::isCompletedLesson($post->ID)) { ?>
@@ -34,3 +37,7 @@
 </div>
 <?php get_template_part('module', 'attachments'); ?>
 <?php get_template_part('module', 'lessons'); ?>
+
+    </div>
+    <div id="divider" class="resizeable"></div>
+</div>

@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+<div id="content">
+    <div class="container">
 <?php the_post(); ?>
 <div class="eightcol column">
 	<h1><?php the_title(); ?></h1>

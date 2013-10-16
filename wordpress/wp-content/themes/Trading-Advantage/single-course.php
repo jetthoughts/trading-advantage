@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+<div id="content">
+    <div class="container">
 <div class="course-content clearfix <?php if((!ThemexCourse::isMember() || !ThemexCourse::isSubscriber()) && !ThemexCourse::isAuthor()) { ?>popup-container<?php } ?>">	
 	<div class="sevencol column">
 		<?php if(!empty(ThemexCourse::$data['course']['lessons'])) { ?>
