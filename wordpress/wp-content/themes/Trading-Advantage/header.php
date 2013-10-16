@@ -95,7 +95,7 @@
     <script type="text/javascript" src="<?php echo THEME_URI; ?>assets/js/plugins.form-components.js"></script>
 
     <script>
-        $(document).ready(function () {
+        jQuery(document).ready(function () {
             "use strict";
 
             App.init(); // Init layout and core plugins
