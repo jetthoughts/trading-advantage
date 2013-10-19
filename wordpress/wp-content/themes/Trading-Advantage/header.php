@@ -61,18 +61,6 @@
             src="<?php echo THEME_URI; ?>plugins/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
 
     <!-- Page specific plugins -->
-    <!-- Charts -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/excanvas.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/jquery.flot.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/jquery.flot.resize.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/jquery.flot.time.min.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/flot/jquery.flot.growraf.min.js"></script>
-    <script type="text/javascript"
-            src="<?php echo THEME_URI; ?>plugins/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
 
     <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo THEME_URI; ?>plugins/daterangepicker/daterangepicker.js"></script>
@@ -104,11 +92,6 @@
         });
     </script>
 
-    <!-- Demo JS -->
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>assets/js/custom.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>assets/js/demo/pages_calendar.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>assets/js/demo/charts/chart_filled_blue.js"></script>
-    <script type="text/javascript" src="<?php echo THEME_URI; ?>assets/js/demo/charts/chart_simple.js"></script>
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo THEME_URI; ?>js/html5.js"></script>
@@ -153,36 +136,17 @@
                     <i class="icon-caret-down small"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="Market-Profile-basics.html"><i class="icon-book"></i>
-                            Market Profile Basics
-                        </a></li>
-                    <li class="divider"></li>
+                    <?php $args = array('taxonomy' => 'course_category');
 
-                    <li><a href="#"><i class="icon-book"></i>
-                            Secrets of an Electronic Futures Trader
-                        </a></li>
-                    <li class="divider"></li>
+                    $terms = get_terms('course_category', $args);
 
-                    <li><a href="#"><i class="icon-book"></i>
-                            HVA Masters Manual Commodiities
-                        </a></li>
-                    <li class="divider"></li>
-
-                    <li><a href="#"><i class="icon-book"></i>
-                            Options Scholar
-                        </a></li>
-                    <li class="divider"></li>
-
-                    <li><a href="#"><i class="icon-book"></i>
-                            Beyond Buy And Hold
-                        </a></li>
-                    <li class="divider"></li>
-
-                    <li><a href="#"><i class="icon-book"></i>
-                            Currencies Fundamentals
-                        </a></li>
-
-
+                    $count = count($terms);
+                    if ($count > 0) {
+                        foreach ($terms as $term) {
+                            $term_list .= '<li><a href="' . get_term_link($term) . '" title="' . sprintf(__('View all post filed under %s', 'my_localization_domain'), $term->name) . '"><i class="icon-book"></i> ' . $term->name . '</a></li><li class="divider"></li>';
+                        }
+                        echo $term_list;
+                    } ?>
                 </ul>
             </li>
             <li class="dropdown">
@@ -226,7 +190,8 @@
                         </li>
                         <li>
                             <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-1.jpg" alt=""/></span>
+                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-1.jpg"
+                                                         alt=""/></span>
 								<span class="subject">
 									<span class="from">Dan O'Brien</span>
 									<span class="time">Just Now</span>
@@ -238,7 +203,8 @@
                         </li>
                         <li>
                             <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-2.jpg" alt=""/></span>
+                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-2.jpg"
+                                                         alt=""/></span>
 								<span class="subject">
 									<span class="from">Tino Boccarsi</span>
 									<span class="time">45 mins</span>
@@ -250,7 +216,8 @@
                         </li>
                         <li>
                             <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-3.jpg" alt=""/></span>
+                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-3.jpg"
+                                                         alt=""/></span>
 								<span class="subject">
 									<span class="from">Scott Bauer</span>
 									<span class="time">6 hours</span>
@@ -271,27 +238,27 @@
                 <li class="dropdown user">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <?php echo ThemexUser::getAvatar($avatar,$current_user,20,$default,'a') ?>
+                        <?php echo ThemexUser::getAvatar($avatar, $current_user, 20, $default, 'a') ?>
                         <span class="username"><?php echo ThemexUser::getFullName($current_user) ?></span>
                         <i class="icon-caret-down small"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<?php echo ThemexUser::$data['profile_page_url']; ?>" >
+                            <a href="<?php echo ThemexUser::$data['profile_page_url']; ?>">
                                 <i class="icon-user"></i><?php _e('My Profile', 'academy'); ?>
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo wp_logout_url(SITE_URL); ?>" >
+                            <a href="<?php echo wp_logout_url(SITE_URL); ?>">
                                 <i class="icon-key"></i><?php _e('Sign Out', 'academy'); ?>
                             </a>
                         </li>
                     </ul>
                 </li>
             <?php } else { ?>
-                <li >
-                    <a href="/register" >
+                <li>
+                    <a href="/register">
                         <i class="icon-key"></i>&nbsp;&nbsp;<?php _e('Sign In', 'academy'); ?>
                     </a>
                 </li>
