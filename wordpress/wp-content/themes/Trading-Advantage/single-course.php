@@ -1,11 +1,17 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
-asdasdasdasdasdasdasd
 <div id="content">
     <div class="container">
-<div class="course-content clearfix <?php if((!ThemexCourse::isMember() || !ThemexCourse::isSubscriber()) && !ThemexCourse::isAuthor()) { ?>popup-container<?php } ?>">	
+
+    <?php
+    $pid = get_post();
+    print_r($pid->ID);
+    $cat = wp_get_post_terms($pid->ID,'course_category');
+    print_r($cat[1]->term_id);
+    ?>
+asdasdasdasdasdasdasd
+<div class="course-content clearfix">
 	<div class="sevencol column">
-		<?php if(!empty(ThemexCourse::$data['course']['lessons'])) { ?>
 		<h1><?php _e('Lessons', 'academy'); ?></h1>
 		<?php if(ThemexCourse::isMember()) { ?>
 		<?php get_template_part('module', 'progress'); ?>
@@ -17,7 +23,6 @@ asdasdasdasdasdasdasd
 			}
 			?>
 		</div>
-		<?php } ?>
 	</div>
 	<div class="course-questions fivecol column last">
 		<?php if($questions=ThemexCourse::getQuestions()) { ?>
@@ -45,5 +50,5 @@ asdasdasdasdasdasdasd
 
 ffffffff
 <?php get_template_part('module', 'related'); ?>
-<?php print_r(ThemexCourse::$data['course']); ?>
+<?php //print_r(ThemexCourse::$data); ?>
 <?php get_footer(); ?>
