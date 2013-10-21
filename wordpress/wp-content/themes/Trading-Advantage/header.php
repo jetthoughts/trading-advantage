@@ -176,8 +176,10 @@
         <ul class="nav navbar-nav navbar-right">
 
             <?php if (ThemexUser::userActive()) { ?>
-                <?php $current_user = ThemexUser::$data['user']; ?>
-
+                <?php
+                    $user_data = ThemexUser::$data['user'];
+                    $current_user = $user_data->ID;
+                ?>
                 <!-- Messages -->
                 <li class="dropdown hidden-xs hidden-sm">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -239,6 +241,7 @@
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <?php echo ThemexUser::getAvatar($avatar, $current_user, 20, $default, 'a') ?>
+
                         <span class="username"><?php echo ThemexUser::getFullName($current_user) ?></span>
                         <i class="icon-caret-down small"></i>
                     </a>

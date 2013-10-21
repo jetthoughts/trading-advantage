@@ -212,9 +212,9 @@ class ThemexUser {
 	//Get Avatar
 	public static function getAvatar($avatar, $user, $size, $default, $alt) {
 		
-		if(isset($user->user_id)) {
-			$user=$user->user_id;
-		}
+//		if(isset($user->user_id)) {
+//			$user=$user->user_id;
+//		}
 		
 		$avatar_id=get_user_meta($user, 'avatar', true);
 		$default=wp_get_attachment_image_src( $avatar_id, 'thumbnail');

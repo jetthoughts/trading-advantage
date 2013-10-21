@@ -19,23 +19,7 @@ $date_format=get_option('date_format'); ?>
 		<div class="post-content">
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
-			<footer class="post-footer">
-				<div class="sixcol column">
-					<?php if(comments_open()) { ?>
-					<div class="post-comment-count"><?php comments_number('0','1','%'); ?></div>
-					<?php } ?>
-					<time class="post-date nomargin" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time($date_format); ?></time>
-					<?php if(ThemexCore::getOption('blog_author')!='true') { ?>
-					<div class="post-author nomargin">&nbsp;<?php _e('by', 'academy'); ?> <?php the_author_posts_link(); ?></div>
-					<?php } ?>
-					<div class="post-categories">&nbsp;<?php _e('in', 'academy'); ?> <?php the_category(', '); ?></div>
-				</div>
-				<div class="sixcol column last">
-					<div class="tagcloud"><?php the_tags('','',''); ?></div>
-				</div>				
-			</footer>
-		</div>		
+		</div>
 	</article>
-	<?php comments_template(); ?>
 
 <?php get_footer(); ?>
