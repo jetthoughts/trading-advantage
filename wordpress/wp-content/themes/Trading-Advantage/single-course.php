@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
+asdasdasdasdasdasdasd
 <div id="content">
     <div class="container">
 <div class="course-content clearfix <?php if((!ThemexCourse::isMember() || !ThemexCourse::isSubscriber()) && !ThemexCourse::isAuthor()) { ?>popup-container<?php } ?>">	
@@ -40,5 +41,9 @@
 	</h2>
 </div>
 <!-- /popup -->
+
+
+ffffffff
 <?php get_template_part('module', 'related'); ?>
+<?php print_r(ThemexCourse::$data['course']); ?>
 <?php get_footer(); ?>

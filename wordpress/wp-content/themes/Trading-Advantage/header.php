@@ -135,7 +135,7 @@
                     Trading Education Programs
                     <i class="icon-caret-down small"></i>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="course_menu">
                     <?php $args = array('taxonomy' => 'course_category');
 
                     $terms = get_terms('course_category', $args);

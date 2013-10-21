@@ -165,7 +165,7 @@ class ThemexCourse {
 			$IDs.=$lesson->ID.',';
 		}
 		$IDs=substr($IDs,0,-1);
-		
+
         $filter = " AND comment_post_ID IN ( $IDs )";
         if (strpos( $query['where'], ' AND comment_post_ID =' )!==false) {
             $query['where'] = preg_replace('~ AND comment_post_ID = \d+~', $filter, $query['where']);

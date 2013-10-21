@@ -3343,3 +3343,7 @@ ul.stats li.light strong {
 .theme-dark #sidebar .notifications li a:hover {
   color: #eaebee;
 }
+
+#course_menu {
+    overflow: auto;
+}
