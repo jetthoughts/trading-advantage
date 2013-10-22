@@ -12,6 +12,7 @@
 		<div class="widget-title"><h4 class="nomargin"><?php _e('Description', 'academy'); ?></h4></div>
 		<div class="widget-content">
 			<?php the_content(); ?>
+            <?php wp_reset_query(); ?>
 			<footer class="course-footer">
 			<?php get_template_part('module', 'form'); ?>
 			</footer>			

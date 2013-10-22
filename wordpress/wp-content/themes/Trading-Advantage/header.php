@@ -155,16 +155,24 @@
                     <i class="icon-caret-down small"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="icon-desktop"></i> Stocks </a></li>
-                    <li class="divider"></li>
 
-                    <li><a href="#"><i class="icon-desktop"></i> Forex</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="icon-desktop"></i> Options</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="icon-desktop"></i> Commodities</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="icon-desktop"></i> Day Trading</a></li>
+                    <?php
+                    $lt_args = array(   // Query arguments for live trading rooms query
+                        'category_slug' => 'live'
+                    );
+                    $live = get_posts($lt_args);
+                    $l_count = 0;
+                    foreach ($live as $ltr) {
+                        $ltr_id = $ltr->ID;
+                        if ($l_count == 0) {
+                            $ltr_str .= '<li><a href="' . post_permalink($ltr_id) . '"><i class="icon-desktop"></i>' . get_the_title($ltr_id) . '</a></li>';
+                        } else {
+                            $ltr_str .= '<li class="divider"></li><li><a href="' . post_permalink($ltr_id) . '"><i class="icon-desktop"></i>' . get_the_title($ltr_id) . '</a></li>';
+                        }
+                        $l_count++;
+                    }
+                    echo $ltr_str;
+                    ?>
 
                 </ul>
             </li>
@@ -180,60 +188,6 @@
                     $user_data = ThemexUser::$data['user'];
                     $current_user = $user_data->ID;
                 ?>
-                <!-- Messages -->
-                <li class="dropdown hidden-xs hidden-sm">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-envelope"></i>
-                        <span class="badge">3</span>
-                    </a>
-                    <ul class="dropdown-menu extended notification">
-                        <li class="title">
-                            <p>You have 3 new messages</p>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-1.jpg"
-                                                         alt=""/></span>
-								<span class="subject">
-									<span class="from">Dan O'Brien</span>
-									<span class="time">Just Now</span>
-								</span>
-								<span class="text">
-									Check out my new class about...
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-2.jpg"
-                                                         alt=""/></span>
-								<span class="subject">
-									<span class="from">Tino Boccarsi</span>
-									<span class="time">45 mins</span>
-								</span>
-								<span class="text">
-									My webinar about stocks is next week...
-								</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span class="photo"><img src="<?php echo THEME_URI; ?>assets/img/demo/avatar-3.jpg"
-                                                         alt=""/></span>
-								<span class="subject">
-									<span class="from">Scott Bauer</span>
-									<span class="time">6 hours</span>
-								</span>
-								<span class="text">
-									Just posted my thoughts about today's market...
-								</span>
-                            </a>
-                        </li>
-                        <li class="footer">
-                            <a href="javascript:void(0);">View all messages</a>
-                        </li>
-                    </ul>
-                </li>
 
                 <!-- User Login Dropdown -->
 

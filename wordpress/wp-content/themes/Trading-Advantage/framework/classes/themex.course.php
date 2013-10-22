@@ -151,7 +151,7 @@ class ThemexCourse {
 	
 	//Get course questions
 	public static function getQuestions() {
-		add_filter( 'comments_clauses', array( __CLASS__, 'filterQuestions'));	
+//		add_filter( 'comments_clauses', array( __CLASS__, 'filterQuestions'));
 		return get_comments(array(
 			'parent' => 0,
 			'number' => self::$data['questions_number'],

@@ -133,7 +133,8 @@ Core script to handle the entire layout and base functions
 		var document_height = $(document).height();
 
 		$('body').height(new_height);
-        $('#course_menu').css('max-height',(new_height - 100) + 'px');
+        var winH = $(window).height();
+        $('#course_menu').css('max-height',(winH - 100) + 'px');
 	}
 
 	var handleLayout = function() {
