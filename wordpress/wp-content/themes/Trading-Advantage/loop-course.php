@@ -1,8 +1,5 @@
 <?php ThemexCourse::initCourse($post->ID); ?>
 
-<blockquote>WHere am I?</blockquote>
-
-
 <?php //if(has_post_thumbnail()) { ?>
 
     <div class="course-preview <?php echo ThemexCourse::$data['course']['status']; ?>-course">
